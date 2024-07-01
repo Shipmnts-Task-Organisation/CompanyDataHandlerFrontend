@@ -51,8 +51,35 @@ function App() {
       <div>
         <Toaster />
       </div>
-
-      {data.length == 0 && <FileUpload storeData={setData} />}
+      {data.length == 0 && (
+        <>
+          <div className="file-format">
+            <p>
+              Please upload an Excel file (.xls or .xlsx) with the following
+              columns and types:
+            </p>
+            <ul>
+              <li>Company Name (string, required)</li>
+              <li>Company Address (string, optional)</li>
+              <li>Company Phone (string, optional)</li>
+              <li>Company Email (string, optional)</li>
+              <li>Company Website (string, optional)</li>
+              <li>Number of Employees (integer, optional)</li>
+              <li>Founded Date (date, optional)</li>
+              <li>
+                Industry Type (enum: Technology, Finance, Healthcare, Retail,
+                Other, required)
+              </li>
+              <li>Contact Name (string, required)</li>
+              <li>Contact Email (string, required)</li>
+              <li>Contact Phone (string, optional)</li>
+              <li>Date of Birth (date, optional)</li>
+              <li>Contact Type (enum: Primary, Secondary, Other, required)</li>
+            </ul>
+          </div>
+          <FileUpload storeData={setData} />
+        </>
+      )}
       {data.length > 0 && <DisplayData data={data} setToStore={setToStore} />}
     </div>
   );
