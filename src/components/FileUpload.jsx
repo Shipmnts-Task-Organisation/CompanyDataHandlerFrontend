@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const FileUpload = () => {
+const FileUpload = (props) => {
   const [file, setFile] = useState(null);
 
   const handleFileChange = (event) => {
@@ -38,7 +38,10 @@ const FileUpload = () => {
           },
         }
       );
-      console.log("File uploaded successfully:", response.data);
+      if (response.data) {
+        console.log(response.data.data);
+        props.storeData(response.data.data);
+      }
     } catch (error) {
       console.error("Error uploading file:", error);
     }
