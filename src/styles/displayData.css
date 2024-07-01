@@ -1,19 +1,69 @@
+/* displayData.css */
+
+/* Styles for the data display container */
 .data-display {
-      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border: 1px solid #ccc;
+      border-radius: 5px;
 }
 
+/* Styles for the table */
 .data-table {
       width: 100%;
+      font-size: x-small;
       border-collapse: collapse;
 }
 
 .data-table th,
 .data-table td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      border: 1px solid #ddd;
 }
 
 .data-table th {
+      background-color: #007bff;
+      color: #fff;
+      text-align: left;
+}
+
+.data-table tbody tr:nth-child(even) {
       background-color: #f2f2f2;
+}
+
+.data-table tbody tr:hover {
+      background-color: #e9ecef;
+}
+
+/* Styles for the confirm and cancel buttons */
+.data-buttons {
+      margin-top: 10px;
+}
+
+.data-buttons button {
+      margin-right: 10px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+}
+
+.data-buttons button:hover {
+      background-color: #218838;
+}
+
+.data-buttons button:last-child {
+      background-color: #dc3545;
+}
+
+.data-buttons button:last-child:hover {
+      background-color: #c82333;
+}
+
+.error-message {
+      color: red;
 }

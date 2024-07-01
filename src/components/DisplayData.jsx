@@ -49,9 +49,11 @@ const DisplayData = (props) => {
             ))}
           </tbody>
         </table>
+        <div className="data-buttons">
+          <button onClick={storeData}>Confirm</button>
+          <button onClick={cancelData}>Cancel</button>
+        </div>
       </div>
-      <button onClick={storeData}>Confirm</button>
-      <button onClick={cancelData}>Cancel</button>
     </>
   );
 };

@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../styles/fileUpload.css";
+import toast, { Toaster } from "react-hot-toast"; // Import toast and Toaster from react-hot-toast
 
 const FileUpload = (props) => {
   const [file, setFile] = useState(null);
@@ -14,21 +16,14 @@ const FileUpload = (props) => {
     e.preventDefault();
 
     if (!file) {
-      alert("Please select a file first!");
+      toast.error("Please select a file first!");
       return;
     }
 
     const formData = new FormData();
     formData.append("file", file);
 
-    // Manually convert formData entries to key-value pairs for debugging
-    console.log("FormData entries:");
-    for (let pair of formData.entries()) {
-      console.log(`${pair[0]}: ${pair[1].name}`); // Display file name instead of file object
-    }
-
     try {
-      console.log(formData);
       const response = await axios.post(
         "http://localhost:3000/upload",
         formData,
@@ -38,17 +33,23 @@ const FileUpload = (props) => {
           },
         }
       );
-      if (response.data) {
+
+      if (response.data.error) {
+        toast.error(response.data.error);
+        document.getElementById("fileInput").value = "";
+      } else if (response.data.data) {
         console.log(response.data.data);
         props.storeData(response.data.data);
+        document.getElementById("fileInput").value = "";
       }
     } catch (error) {
       console.error("Error uploading file:", error);
+      toast.error("Error uploading file. Please try again."); // Set error message state
     }
   };
 
   return (
-    <div>
+    <div className="FileUpload">
       <form onSubmit={handleSubmit}>
         <input
           type="file"
