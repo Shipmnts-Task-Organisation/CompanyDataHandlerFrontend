@@ -1,3 +1,6 @@
+![alt text](https://github.com/Shipmnts-Task-Organisation/CompanyDataHandlerFrontend/blob/main/Screenshot%202024-07-01%20181418.png)
+![alt text](https://github.com/Shipmnts-Task-Organisation/CompanyDataHandlerFrontend/blob/main/Screenshot%202024-07-01%20181958.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
