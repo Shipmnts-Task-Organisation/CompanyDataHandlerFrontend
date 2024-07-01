@@ -1,6 +1,5 @@
 /* App.css */
 
-/* Styles for the entire App component */
 .App {
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
@@ -12,14 +11,18 @@
       height: 100vh;
 }
 
-/* Styles for FileUpload component */
-/* Assuming .FileUpload is a class applied to a component within FileUpload.js */
+.App .title {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 3em;
+      color: #007bff;
+      /* Blue color for title */
+}
+
 .FileUpload {
       margin-bottom: 20px;
 }
 
-/* Styles for DisplayData component */
-/* Assuming .DisplayData is a class applied to a component within DisplayData.js */
 .DisplayData {
       margin-top: 20px;
       padding: 10px;

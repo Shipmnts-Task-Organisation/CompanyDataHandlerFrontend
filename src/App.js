@@ -1,3 +1,8 @@
+/*
+This app component will just make call to backend for storing the validated data
+into the database.
+*/
+
 import logo from "./logo.svg";
 import "../src/styles/App.css";
 import FileUpload from "./components/FileUpload";
@@ -25,11 +30,16 @@ function App() {
   const storeData = async () => {
     console.log(data);
     try {
-      await toast.promise(axios.post("http://localhost:3000/store", { data }), {
-        loading: "Loading...",
-        success: <b>Successfully stored the data</b>,
-        error: <b>Error storing data. Please try again.</b>,
-      });
+      await toast.promise(
+        axios.post("https://companydatahandlerbackend.onrender.com/store", {
+          data,
+        }),
+        {
+          loading: "Loading...",
+          success: <b>Successfully stored the data</b>,
+          error: <b>Error storing data. Please try again.</b>,
+        }
+      );
     } catch (error) {
       console.error("Error uploading file:", error);
       toast.error("Error storing data. Please try again.");
@@ -37,6 +47,7 @@ function App() {
   };
   return (
     <div className="App">
+      <div className="title">Store Company Details</div>
       <div>
         <Toaster />
       </div>

@@ -1,3 +1,8 @@
+/*
+This component is for displaying data which we have got from the backend for 
+validation. it will validate it and then takes decision whether to keep this data or not.
+*/
+
 import React from "react";
 import "../styles/displayData.css";
 const DisplayData = (props) => {

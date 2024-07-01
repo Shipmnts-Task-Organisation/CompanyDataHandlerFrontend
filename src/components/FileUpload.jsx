@@ -1,3 +1,8 @@
+/*
+This is the component for uploading the file which will be sent to the backend.
+*/
+
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/fileUpload.css";
@@ -25,7 +30,7 @@ const FileUpload = (props) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/upload",
+        "https://companydatahandlerbackend.onrender.com/upload",
         formData,
         {
           headers: {
